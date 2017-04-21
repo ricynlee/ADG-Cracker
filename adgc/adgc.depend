@@ -2160,15 +2160,15 @@
 1385316876 source:c:\users\ricyn\desktop\adg-cracker\resource.rc
 	"wx/msw/wx.rc"
 
-1492747150 source:d:\megasync\git\adg-cracker\adgc\adgcapp.cpp
+1492752098 source:d:\megasync\git\adg-cracker\adgc\adgcapp.cpp
 	"adgcApp.h"
 	"adgcMain.h"
 	<wx/image.h>
 
-1492747150 d:\megasync\git\adg-cracker\adgc\adgcapp.h
+1492752098 d:\megasync\git\adg-cracker\adgc\adgcapp.h
 	<wx/app.h>
 
-1492747152 d:\megasync\git\adg-cracker\adgc\adgcmain.h
+1492752098 d:\megasync\git\adg-cracker\adgc\adgcmain.h
 	<wx/sizer.h>
 	<wx/stattext.h>
 	<wx/filepicker.h>
@@ -2176,7 +2176,7 @@
 	<wx/button.h>
 	<wx/dialog.h>
 
-1492747150 source:d:\megasync\git\adg-cracker\adgc\adgcmain.cpp
+1492752098 source:d:\megasync\git\adg-cracker\adgc\adgcmain.cpp
 	"adgcMain.h"
 	<wx/msgdlg.h>
 	<wx/font.h>

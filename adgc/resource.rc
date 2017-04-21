@@ -1,3 +1,29 @@
-aaaa ICON "wx/msw/std.ico"
+mainicon ICON "wx/msw/std.ico"
 
 #include "wx/msw/wx.rc"
+
+// this will set your .exe icon
+// A ICON MOVEABLE PURE LOADONCALL DISCARDABLE "myiconfilename.ico"
+
+//include version information in .exe, modify these values to match your needs
+1 VERSIONINFO
+FILEVERSION 0,0,0,1 // RC file version
+// PRODUCTVERSION 0,0,0,1
+FILETYPE VFT_APP{
+    BLOCK "StringFileInfo"{
+        BLOCK "040904E4"{
+            VALUE "CompanyName", "Ricyn Lee"
+            VALUE "FileVersion", "0.0.0.1"
+            VALUE "FileDescription", "A cracker for Affinic Debugger GUI 2.0.1"
+            VALUE "InternalName", "ADGC"
+            VALUE "LegalCopyright", "(C) 2017 Ricyn Lee"
+            VALUE "LegalTrademarks", "None"
+            VALUE "OriginalFilename", "adgc.exe"
+            VALUE "ProductName", "ADG Cracker"
+            VALUE "ProductVersion", "beta"
+        }
+    }
+    BLOCK "VarFileInfo"{
+        VALUE "Translation", 0x0409 /*en-US*/, 1252 /*Multi-lingual*/
+    }
+}
