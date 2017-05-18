@@ -34,9 +34,9 @@ class adgcDialog: public wxDialog
 
         //(*Identifiers(adgcDialog)
         static const long ID_STATICTEXT1;
-        static const long ID_STATICTEXT2;
         static const long ID_STATICTEXT3;
         static const long ID_STATICLINE1;
+        static const long ID_STATICTEXT2;
         static const long ID_FILEPICKERCTRL1;
         static const long ID_BUTTON1;
         //*)
