@@ -7,13 +7,13 @@ mainicon ICON "wx/msw/std.ico"
 
 //include version information in .exe, modify these values to match your needs
 1 VERSIONINFO
-FILEVERSION 0,0,0,1 // RC file version
+FILEVERSION 0,0,0,2 // RC file version
 // PRODUCTVERSION 0,0,0,1
 FILETYPE VFT_APP{
     BLOCK "StringFileInfo"{
         BLOCK "040904E4"{
             VALUE "CompanyName", "Ricyn Lee"
-            VALUE "FileVersion", "0.0.0.1"
+            VALUE "FileVersion", "0.0.0.2"
             VALUE "FileDescription", "A cracker for Affinic Debugger GUI 2.0.1"
             VALUE "InternalName", "ADGC"
             VALUE "LegalCopyright", "(C) 2017 Ricyn Lee"
