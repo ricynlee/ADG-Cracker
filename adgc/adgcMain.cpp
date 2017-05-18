@@ -9,6 +9,7 @@
 
 #include "adgcMain.h"
 #include <wx/msgdlg.h>
+#include "string.h"
 
 //(*InternalHeaders(adgcDialog)
 #include <wx/font.h>
@@ -130,23 +131,39 @@ void adgcDialog::OnButton1Click(wxCommandEvent& event)
         return;
     }
 
-    uint8_t crack_data[2];
+    uint8_t crack_data[8];
 
+    // Detect whether features are limited (Vital)
     fseek(fp,0x593b,SEEK_SET);
     fread(crack_data, 1, 2, fp);
 
     if(! (0x74==crack_data[0] && 0x07==crack_data[1])){
         if(0x90==crack_data[0] && 0x90==crack_data[1])
-            wxMessageBox(TEXT("Cannot validate file integrity.\nFile seems already cracked."),TEXT("ADG Cracker"),wxOK | wxCENTER | wxICON_ERROR);
+            wxMessageBox(TEXT("Cannot validate file integrity.\nBut ADG seems already cracked."),TEXT("ADG Cracker"),wxOK | wxCENTER | wxICON_ERROR);
         else
             wxMessageBox(TEXT("Cannot validate file integrity."),TEXT("ADG Cracker"),wxOK | wxCENTER | wxICON_ERROR);
         return;
     }
 
+    // Feature limitations removed
     crack_data[0]=0x90; // x86 ASM : NOP
     crack_data[1]=0x90; // x86 ASM : NOP
     fseek(fp,0x593b,SEEK_SET); // Necessary!
     fwrite(crack_data, 1, 2, fp);
+
+    // Check whether ABOUT dialog "limited" sign modified (Unnecessary)
+    fseek(fp,0xbc916,SEEK_SET);
+    fread(crack_data, 1, 7, fp); // "Limited", without ending '\0'
+    if(!strncmp((const char*)crack_data,"Limited",7)){
+        fseek(fp,0xc3a94,SEEK_SET);
+        fread(crack_data, 1, 4, fp); // "Lite", without ending '\0'
+        if(!strncmp((const char*)crack_data,"Lite",4)){
+            fseek(fp,0xbc916,SEEK_SET);
+            fwrite("Cracked", 1, 7, fp);
+            fseek(fp,0xc3a94,SEEK_SET);
+            fwrite("Full", 1, 4, fp);
+        }
+    }
 
     fclose(fp);
 
