@@ -12,4 +12,5 @@ Affinic Debugger GUI(ADG)是一款不错的跨平台gdb前端,尤其是在Window
 
 ## 其他说明
 
-本Repo提供了Code::Blocks/wxSmith工程,使用了wxWidgets 3.0.2 (SHARED=0)库,可用TDM-GCC 4.8.1编译.
+- 本Repo提供了Code::Blocks/wxSmith工程,使用了wxWidgets 3.0.2 (SHARED=0)库,可用TDM-GCC 4.8.1编译.
+- 如果尚在PRO版本试用期,解除限制后不会立即感受到变化;但是,出试用期之后就会自动保持PRO版本效果.
